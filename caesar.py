@@ -49,7 +49,7 @@ def encrypt(plaintext, shift, seed):
             # Schritt 1: Caesar Shift
             idx = ALPHABET.index(c)
             shifted = (idx + shift) % 26
-            # Schritt 2: Substitution über perm
+            # Schritt 2: Substitution ueber perm
             result = result + perm[shifted]
         else:
             # Leerzeichen / Sonderzeichen bleiben
@@ -74,7 +74,7 @@ def decrypt(ciphertext, shift, seed):
     return result
 
 
-# laedt den demo text aus der datei
+# helpfunction text load
 def load_demo_text():
     if os.path.exists(DEMO_FILE) == False:
         print("Fehler: Demo Datei nicht gefunden unter " + DEMO_FILE)
@@ -128,7 +128,7 @@ def menu():
             pt = decrypt(ct, SHIFT, SEED)
             print("\nEntschluesselt:")
             print(pt)
-            print("\nKlartext == Entschluesselt: " + str(demo_text == pt))
+            print("\nKlartext == Entschluesselt: " + str(demo_text.upper() == pt))
 
         elif wahl == "4":
             print("Programm beendet.")
